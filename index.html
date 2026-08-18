@@ -419,7 +419,7 @@ select.input{appearance:none;background-image:linear-gradient(45deg,transparent 
 var NT = window.NT || {};
 window.NT = NT;
 
-NT.VERSION = '1.0.0';
+NT.VERSION = '1.1.0';
 NT.ICON = 'icons/icon-192.png';
 NT.ICON = 'icons/icon-192.png';
 
@@ -1004,10 +1004,413 @@ NT.SEED = (function () {
     [['porción (25 g)',25],['100 g',100]],U,'🍫'),
   f('creatina','Creatina monohidratada','suplemento','na',0,0,0,0,
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [['dosis (5 g)',5]],E,'💊',['suplemento'])
+    [['dosis (5 g)',5]],E,'💊',['suplemento']),
+
+  /* ---------------- INGREDIENTES PARA RECETAS ---------------- */
+  f('cilantro','Cilantro fresco','verdura','crudo',23,2.13,3.67,0.52,
+    [2.8,0.87,46,67,1.77,26,521,0.50,337,27.0,0,2.50,310,0,62],
+    [['manojo pequeño (25 g)',25],['100 g',100]],U,'🌿'),
+  f('ajo','Ajo','verdura','crudo',149,6.36,33.1,0.50,
+    [2.1,1.00,17,181,1.70,25,401,1.16,0,31.2,0,0.08,1.7,0,3],
+    [['diente (3 g)',3],['100 g',100]],U,'🧄'),
+  f('tomate_verde','Tomate verde (tomatillo)','verdura','crudo',32,0.96,5.84,1.02,
+    [1.9,3.93,1,7,0.62,20,268,0.22,7,11.7,0,0.39,10.1,0,7],
+    [['pieza (34 g)',34],['100 g',100]],U,'🍏',['favorito']),
+  f('chile_poblano','Chile poblano','verdura','crudo',20,0.90,4.60,0.20,
+    [1.6,2.30,3,10,0.46,12,175,0.14,27,80.0,0,0.37,7.4,0,10],
+    [['pieza (85 g)',85],['100 g',100]],U,'🫑'),
+  f('chipotle_adobo','Chile chipotle en adobo','otro','na',100,2.00,15.0,3.50,
+    [5.0,8.0,1200,20,1.20,null,null,null,null,null,null,null,null,null,null],
+    [['pieza (12 g)',12],['cucharada (15 g)',15],['100 g',100]],E,'🌶️'),
+  f('chile_guajillo','Chile guajillo seco','otro','na',324,10.6,69.9,5.80,
+    [28.7,10.4,30,45,7.80,152,1870,2.00,1200,3.0,0,29.8,80,0,50],
+    [['pieza (5 g)',5],['100 g',100]],U,'🌶️'),
+  f('crema_acida','Crema ácida','lacteo','na',198,2.44,4.63,19.4,
+    [0,3.50,61,101,0.06,10,141,0.27,193,0.9,0.1,0.40,1.7,0.30,11],
+    [['cucharada (15 g)',15],['100 g',100]],U,'🥛'),
+  f('chorizo','Chorizo de cerdo','proteina','crudo',455,24.1,1.86,38.3,
+    [0,0,1235,8,1.53,18,398,3.15,0,0,0.6,0.22,0,2.03,1],
+    [['porción (50 g)',50],['100 g',100]],U,'🌭'),
+  f('platano_macho','Plátano macho','carbo','crudo',122,1.30,31.9,0.37,
+    [2.3,15.0,4,3,0.60,37,499,0.14,56,18.4,0,0.14,0.7,0,22],
+    [['pieza (180 g)',180],['100 g',100]],U,'🍌'),
+  f('chicharo','Chícharo','verdura','crudo',81,5.42,14.5,0.40,
+    [5.1,5.67,5,25,1.47,33,244,1.24,38,40.0,0,0.13,24.8,0,65],
+    [['taza (145 g)',145],['100 g',100]],U,'🫛'),
+  f('queso_cotija','Queso cotija','lacteo','na',380,24.0,2.00,30.0,
+    [0,1.0,1800,700,null,null,null,null,null,null,null,null,null,null,null],
+    [['cucharada (12 g)',12],['100 g',100]],E,'🧀'),
+  f('pavo_molido','Pavo molido 93/7','proteina','crudo',150,19.7,0,8.30,
+    [0,0,68,20,1.10,22,244,2.10,0,0,0.2,0.20,0,1.00,7],
+    [['100 g',100]],U,'🦃'),
+  f('pepita','Pepita de calabaza','grasa','na',559,30.2,10.7,49.1,
+    [6.0,1.29,7,46,8.82,592,809,7.81,1,1.9,0,2.18,7.3,0,58],
+    [['puño (28 g)',28],['100 g',100]],U,'🎃'),
+  f('amaranto','Amaranto','carbo','crudo',371,13.6,65.2,7.02,
+    [6.7,1.69,4,159,7.61,248,508,2.87,0,4.2,0,1.19,0,0,82],
+    [['porción (30 g)',30],['100 g',100]],U,'🌾'),
+  f('frijol_refrito','Frijoles refritos','carbo','cocido',90,5.30,14.6,1.50,
+    [5.0,0.50,400,45,1.70,45,400,0.80,0,0,0,0.10,1.0,0,80],
+    [['porción (120 g)',120],['100 g',100]],E,'🫘',['favorito']),
+  f('granola','Granola','carbo','na',471,10.1,64.4,20.0,
+    [7.0,22.0,26,60,3.20,120,380,2.30,0,0,0,3.0,1.0,0,30],
+    [['porción (40 g)',40],['100 g',100]],E,'🥣'),
+  f('leche_almendra','Leche de almendra sin azúcar','bebida','na',15,0.59,0.58,1.22,
+    [0.3,0,72,184,0.28,7,50,0.06,0,0,1.0,3.30,0,0.60,1],
+    [['vaso (250 ml)',250],['100 ml',100]],U,'🥛'),
+  f('tofu','Tofu firme','proteina','na',144,17.3,2.78,8.72,
+    [2.3,0.62,14,201,2.66,58,221,1.57,0,0.1,0,0.01,2.4,0,19],
+    [['porción (100 g)',100]],U,'🧊'),
+  f('salsa_roja','Salsa roja de jitomate','otro','na',29,1.50,5.20,0.20,
+    [1.5,3.0,650,20,0.60,null,null,null,null,null,null,null,null,null,null],
+    [['cucharada (16 g)',16],['100 g',100]],E,'🌶️'),
+  f('mole_pasta','Pasta de mole','otro','na',450,8.00,45.0,27.0,
+    [8.0,25.0,900,80,4.00,null,null,null,null,null,null,null,null,null,null],
+    [['porción (30 g)',30],['100 g',100]],E,'🍫')
   ];
 
   return list;
+})();
+
+
+/* ===== 12-recipes-seed.js ===== */
+/* ============================================================
+   NUTRI TRACK — recetario de platillos mexicanos
+   ------------------------------------------------------------
+   Cada receta trae ingredientes con su papel dentro del platillo:
+     prot   → fuente de proteína (se escala para alcanzar tu objetivo)
+     carbo  → guarnición de carbohidrato (se escala)
+     verd   → verdura (se ajusta poco)
+     grasa  → grasa añadida (se ajusta poco)
+     sazon  → condimento (cantidad fija)
+   Las cantidades base son para una porción de referencia; la app
+   las reescala a los macros que te tocan en esa comida.
+   ============================================================ */
+NT.RECIPES = (function () {
+
+  function r(id, name, emoji, meals, min, ing, steps, tags) {
+    return {
+      id: id, name: name, emoji: emoji, meals: meals, minutes: min,
+      ingredients: ing.map(function (x) {
+        return { foodId: x[0], grams: x[1], role: x[2] || 'sazon' };
+      }),
+      steps: steps, tags: tags || []
+    };
+  }
+
+  return [
+  /* ==================== DESAYUNOS ==================== */
+  r('huevos_mexicana','Huevos a la mexicana','🍳',['desayuno'],12,
+    [['huevo_entero',150,'prot'],['jitomate',80,'verd'],['cebolla',30,'verd'],
+     ['chile_serrano',7,'sazon'],['cilantro',5,'sazon'],['aceite_oliva',5,'grasa'],
+     ['tortilla_maiz',60,'carbo']],
+    ['Pica el jitomate, la cebolla y el chile; sofríelos en el aceite hasta que suelten jugo.',
+     'Bate los huevos, viértelos y revuelve a fuego medio hasta cuajar.',
+     'Agrega el cilantro al final y sirve con las tortillas calientes.'],
+    ['rapido','clasico']),
+
+  r('claras_espinaca','Claras con espinaca y panela','🥬',['desayuno'],12,
+    [['clara_huevo',200,'prot'],['queso_panela',40,'prot'],['espinaca',80,'verd'],
+     ['jitomate',60,'verd'],['aceite_oliva',4,'grasa'],['tortilla_maiz',60,'carbo']],
+    ['Saltea la espinaca y el jitomate con el aceite hasta que se reduzcan.',
+     'Vierte las claras y revuelve hasta cuajar.',
+     'Agrega el panela en cubos, apaga y sirve con tortillas.'],
+    ['alto_proteina','bajo_grasa']),
+
+  r('avena_platano','Avena con plátano y crema de cacahuate','🥣',['desayuno'],8,
+    [['avena',60,'carbo'],['leche_light',250,'prot'],['platano',100,'carbo'],
+     ['crema_cacahuate',15,'grasa'],['chia',10,'grasa']],
+    ['Cuece la avena con la leche a fuego bajo unos 5 minutos, moviendo.',
+     'Sirve y encima pon el plátano en rodajas, la crema de cacahuate y la chía.'],
+    ['rapido','dulce']),
+
+  r('chilaquiles_verdes','Chilaquiles verdes con pollo','🫓',['desayuno'],20,
+    [['totopos',50,'carbo'],['salsa_verde',120,'sazon'],['pollo_pechuga_cocido',120,'prot'],
+     ['crema_acida',20,'grasa'],['queso_fresco',30,'prot'],['cebolla',20,'verd']],
+    ['Calienta la salsa verde en una sartén amplia hasta que hierva.',
+     'Apaga, agrega los totopos y revuelve rápido para que no se aguaden.',
+     'Sirve con el pollo deshebrado, la crema, el queso y la cebolla en aros.'],
+    ['clasico','fin_de_semana']),
+
+  r('molletes','Molletes con frijol y panela','🍞',['desayuno'],12,
+    [['pan_integral',60,'carbo'],['frijol_refrito',120,'carbo'],['queso_panela',60,'prot'],
+     ['jitomate',60,'verd'],['cebolla',20,'verd'],['cilantro',5,'sazon']],
+    ['Tuesta el pan y úntale los frijoles refritos calientes.',
+     'Cubre con el queso y gratina 5 minutos en el horno o comal tapado.',
+     'Encima pon pico de gallo de jitomate, cebolla y cilantro.'],
+    ['rapido']),
+
+  r('huevos_nopales','Huevos con nopales','🌵',['desayuno'],15,
+    [['huevo_entero',150,'prot'],['nopal',150,'verd'],['jitomate',60,'verd'],
+     ['cebolla',25,'verd'],['aceite_oliva',5,'grasa'],['tortilla_maiz',60,'carbo'],
+     ['queso_fresco',25,'prot']],
+    ['Cuece los nopales en agua con sal, escúrrelos y enjuágalos.',
+     'Sofríe cebolla y jitomate, agrega los nopales y luego los huevos batidos.',
+     'Revuelve hasta cuajar, espolvorea el queso y sirve con tortillas.'],
+    ['alto_fibra','clasico']),
+
+  r('yogur_fruta','Yogur griego con fruta y granola','🍓',['desayuno','colacion'],5,
+    [['yogur_griego_0',250,'prot'],['fresa',120,'carbo'],['granola',40,'carbo'],
+     ['chia',10,'grasa'],['miel',10,'sazon']],
+    ['Sirve el yogur en un tazón.',
+     'Encima acomoda la fruta, la granola, la chía y un hilo de miel.'],
+    ['rapido','sin_cocinar','alto_proteina']),
+
+  r('omelette_champinon','Omelette de champiñón y queso','🍄',['desayuno','cena'],14,
+    [['huevo_entero',100,'prot'],['clara_huevo',120,'prot'],['champinon',80,'verd'],
+     ['espinaca',50,'verd'],['queso_oaxaca',35,'prot'],['aceite_oliva',5,'grasa'],
+     ['tortilla_maiz',60,'carbo']],
+    ['Saltea los champiñones y la espinaca con el aceite hasta dorar.',
+     'Bate huevo y claras, viértelos en la sartén y deja cuajar la base.',
+     'Pon el relleno y el queso en la mitad, dobla y cocina 2 minutos más.',
+     'Acompaña con tortillas calientes.'],
+    ['alto_proteina','bajo_carbo']),
+
+  r('licuado_proteina','Licuado de proteína con avena','🥤',['desayuno','colacion'],4,
+    [['whey',30,'prot'],['avena',40,'carbo'],['platano',100,'carbo'],
+     ['leche_light',250,'prot'],['crema_cacahuate',10,'grasa']],
+    ['Pon todo en la licuadora con hielo.',
+     'Licúa 30 segundos y bébelo de inmediato.'],
+    ['rapido','sin_cocinar','post_entreno']),
+
+  r('huevo_frijol_aguacate','Huevo con frijoles y aguacate','🥑',['desayuno'],12,
+    [['huevo_entero',150,'prot'],['frijol_cocido',150,'carbo'],['aguacate',50,'grasa'],
+     ['tortilla_maiz',60,'carbo'],['salsa_roja',30,'sazon'],['cilantro',5,'sazon']],
+    ['Calienta los frijoles y estréllalos o revuélvelos con el huevo, como prefieras.',
+     'Sirve con el aguacate en rebanadas, la salsa y las tortillas.'],
+    ['clasico','economico']),
+
+  /* ==================== COMIDAS ==================== */
+  r('pollo_nopales_verde','Pollo con nopales en salsa verde','🌿',['comida'],30,
+    [['pollo_pechuga_crudo',180,'prot'],['nopal',150,'verd'],['tomate_verde',150,'verd'],
+     ['chile_serrano',10,'sazon'],['cebolla',40,'verd'],['ajo',6,'sazon'],
+     ['cilantro',10,'sazon'],['arroz_cocido',150,'carbo'],['aceite_oliva',5,'grasa']],
+    ['Hierve los tomates verdes con el chile, el ajo y un trozo de cebolla; licúa con cilantro.',
+     'Dora el pollo en cubos con el aceite y el resto de la cebolla.',
+     'Agrega la salsa y los nopales cocidos; deja sazonar 10 minutos.',
+     'Sirve con el arroz.'],
+    ['clasico','alto_proteina']),
+
+  r('tinga_pollo','Tinga de pollo','🌮',['comida'],30,
+    [['pollo_pechuga_cocido',170,'prot'],['jitomate',180,'verd'],['cebolla',60,'verd'],
+     ['chipotle_adobo',15,'sazon'],['ajo',5,'sazon'],['tostada',36,'carbo'],
+     ['frijol_cocido',120,'carbo'],['aguacate',40,'grasa']],
+    ['Licúa el jitomate con el ajo y el chipotle.',
+     'Acitrona la cebolla en rebanadas y vierte la salsa; deja espesar 10 minutos.',
+     'Incorpora el pollo deshebrado y cocina 5 minutos más.',
+     'Sirve sobre tostadas con frijoles y aguacate.'],
+    ['clasico','meal_prep']),
+
+  r('bistec_mexicana','Bistec a la mexicana','🥩',['comida'],25,
+    [['bistec_crudo',180,'prot'],['jitomate',120,'verd'],['cebolla',50,'verd'],
+     ['chile_serrano',10,'sazon'],['arroz_cocido',150,'carbo'],['frijol_cocido',100,'carbo'],
+     ['aceite_oliva',5,'grasa'],['tortilla_maiz',30,'carbo']],
+    ['Corta el bistec en tiras y séllalo a fuego alto con el aceite.',
+     'Agrega cebolla, jitomate y chile picados; cocina 8 minutos.',
+     'Sirve con arroz, frijoles y tortillas.'],
+    ['clasico','alto_proteina']),
+
+  r('tilapia_empapelada','Tilapia empapelada con verduras','🐟',['comida','cena'],28,
+    [['tilapia_cruda',200,'prot'],['calabacita',120,'verd'],['zanahoria',80,'verd'],
+     ['jitomate',80,'verd'],['limon',20,'sazon'],['ajo',5,'sazon'],
+     ['aceite_oliva',6,'grasa'],['arroz_cocido',150,'carbo']],
+    ['Acomoda el filete sobre papel aluminio con las verduras en juliana.',
+     'Baña con limón, ajo picado y el aceite; cierra el paquete.',
+     'Hornea 20 minutos a 200 °C o cocina tapado en comal 15 minutos.',
+     'Sirve con el arroz.'],
+    ['bajo_grasa','saludable']),
+
+  r('picadillo','Picadillo de res con papa y zanahoria','🥕',['comida'],30,
+    [['molida_90',170,'prot'],['papa',150,'carbo'],['zanahoria',80,'verd'],
+     ['chicharo',60,'verd'],['jitomate',150,'verd'],['cebolla',40,'verd'],
+     ['ajo',5,'sazon'],['tortilla_maiz',60,'carbo']],
+    ['Dora la carne molida y retira el exceso de grasa.',
+     'Agrega cebolla y ajo, luego el jitomate licuado.',
+     'Incorpora papa y zanahoria en cubos y los chícharos; cocina tapado 20 minutos.',
+     'Sirve con tortillas.'],
+    ['meal_prep','economico']),
+
+  r('albondigas','Albóndigas en caldillo','🍲',['comida'],40,
+    [['molida_90',170,'prot'],['huevo_entero',50,'prot'],['arroz_crudo',25,'carbo'],
+     ['jitomate',180,'verd'],['calabacita',100,'verd'],['cebolla',40,'verd'],
+     ['ajo',5,'sazon'],['tortilla_maiz',60,'carbo']],
+    ['Mezcla la carne con el huevo y el arroz crudo; forma las albóndigas.',
+     'Licúa el jitomate con cebolla y ajo, y hierve el caldillo.',
+     'Añade las albóndigas y la calabacita; cocina tapado 25 minutos.',
+     'Sirve con tortillas.'],
+    ['clasico','meal_prep']),
+
+  r('fajitas_pollo','Fajitas de pollo con pimientos','🫑',['comida','cena'],22,
+    [['pollo_pechuga_crudo',180,'prot'],['pimiento',120,'verd'],['cebolla',60,'verd'],
+     ['aceite_oliva',6,'grasa'],['tortilla_maiz',90,'carbo'],['aguacate',40,'grasa'],
+     ['limon',15,'sazon']],
+    ['Corta el pollo y las verduras en tiras.',
+     'Sella el pollo a fuego alto, agrega pimiento y cebolla; saltea 6 minutos.',
+     'Sirve en tortillas con aguacate y limón.'],
+    ['rapido','alto_proteina']),
+
+  r('camarones_ajillo','Camarones al ajillo con arroz','🍤',['comida','cena'],20,
+    [['camaron_crudo',200,'prot'],['ajo',12,'sazon'],['chile_guajillo',6,'sazon'],
+     ['aceite_oliva',10,'grasa'],['brocoli',150,'verd'],['arroz_cocido',150,'carbo'],
+     ['limon',15,'sazon']],
+    ['Fríe el ajo rebanado y el guajillo en tiras con el aceite, sin quemarlos.',
+     'Sube el fuego y agrega los camarones; 3 minutos por lado bastan.',
+     'Sirve con el brócoli al vapor, el arroz y limón.'],
+    ['rapido','bajo_grasa']),
+
+  r('lentejas_pollo','Lentejas con verduras y pollo','🫘',['comida'],35,
+    [['lenteja_cocida',220,'carbo'],['pollo_pechuga_crudo',150,'prot'],['zanahoria',80,'verd'],
+     ['apio',50,'verd'],['jitomate',100,'verd'],['cebolla',40,'verd'],['ajo',5,'sazon'],
+     ['aceite_oliva',5,'grasa']],
+    ['Sofríe cebolla, ajo, zanahoria y apio con el aceite.',
+     'Agrega el jitomate y el pollo en cubos; cocina 10 minutos.',
+     'Incorpora las lentejas ya cocidas y deja sazonar 10 minutos más.'],
+    ['alto_fibra','economico']),
+
+  r('chiles_atun','Chiles poblanos rellenos de atún','🌶️',['comida','cena'],30,
+    [['chile_poblano',170,'verd'],['atun_agua',160,'prot'],['jitomate',100,'verd'],
+     ['cebolla',40,'verd'],['queso_panela',50,'prot'],['arroz_cocido',120,'carbo'],
+     ['aceite_oliva',5,'grasa']],
+    ['Asa los poblanos, sudálos en una bolsa y quítales la piel y las semillas.',
+     'Sofríe cebolla y jitomate, mezcla con el atún escurrido.',
+     'Rellena los chiles, ponles el panela encima y hornea 12 minutos.',
+     'Sirve con el arroz.'],
+    ['bajo_grasa','alto_proteina']),
+
+  r('milanesa_horno','Milanesa de pollo al horno con ensalada','🍗',['comida'],30,
+    [['pollo_pechuga_crudo',180,'prot'],['pan_integral',40,'carbo'],['huevo_entero',50,'prot'],
+     ['lechuga',80,'verd'],['jitomate',80,'verd'],['pepino',80,'verd'],
+     ['aguacate',50,'grasa'],['limon',15,'sazon']],
+    ['Aplana el pollo, pásalo por huevo batido y luego por el pan molido.',
+     'Hornea 20 minutos a 200 °C, volteando a la mitad.',
+     'Acompaña con la ensalada aliñada con limón y aguacate.'],
+    ['bajo_grasa','familiar']),
+
+  r('pescado_camote','Pescado con puré de camote y ejotes','🍠',['comida','cena'],30,
+    [['salmon_crudo',150,'prot'],['camote',180,'carbo'],['ejote',150,'verd'],
+     ['aceite_oliva',6,'grasa'],['ajo',5,'sazon'],['limon',15,'sazon']],
+    ['Cuece el camote y hazlo puré con un poco de su agua.',
+     'Sella el pescado 4 minutos por lado con el aceite y el ajo.',
+     'Cocina los ejotes al vapor y sirve todo junto con limón.'],
+    ['saludable','omega3']),
+
+  /* ==================== CENAS ==================== */
+  r('ensalada_atun','Ensalada de atún con jícama','🥗',['cena'],10,
+    [['atun_agua',160,'prot'],['jicama',120,'verd'],['pepino',100,'verd'],
+     ['jitomate',80,'verd'],['aguacate',50,'grasa'],['limon',20,'sazon'],
+     ['tostada',24,'carbo'],['cilantro',5,'sazon']],
+    ['Pica todo en cubos del mismo tamaño.',
+     'Mezcla con el atún escurrido, el limón y el cilantro.',
+     'Sirve sobre las tostadas con el aguacate encima.'],
+    ['rapido','sin_cocinar','bajo_grasa']),
+
+  r('sopa_pollo','Sopa de verduras con pollo','🍜',['cena'],30,
+    [['pollo_pechuga_crudo',150,'prot'],['calabacita',120,'verd'],['zanahoria',80,'verd'],
+     ['ejote',80,'verd'],['jitomate',100,'verd'],['cebolla',40,'verd'],
+     ['cilantro',8,'sazon'],['arroz_cocido',100,'carbo']],
+    ['Hierve el pollo con cebolla y sal; deshébralo y guarda el caldo.',
+     'Cuece las verduras en ese caldo hasta que estén suaves.',
+     'Regresa el pollo, agrega el arroz y el cilantro al servir.'],
+    ['ligero','reconfortante']),
+
+  r('tacos_tilapia','Tacos de tilapia con col','🌮',['cena'],22,
+    [['tilapia_cruda',180,'prot'],['tortilla_maiz',90,'carbo'],['col',100,'verd'],
+     ['limon',20,'sazon'],['crema_acida',20,'grasa'],['cebolla',30,'verd'],
+     ['cilantro',8,'sazon'],['aceite_oliva',5,'grasa']],
+    ['Sazona el pescado con limón y ásalo 4 minutos por lado.',
+     'Ralla la col y mézclala con cebolla, cilantro y limón.',
+     'Arma los tacos con el pescado, la ensalada de col y un poco de crema.'],
+    ['rapido','ligero']),
+
+  r('requeson_tostadas','Requesón con verduras y tostadas','🧀',['cena','colacion'],8,
+    [['requeson',200,'prot'],['jitomate',80,'verd'],['pepino',100,'verd'],
+     ['tostada',24,'carbo'],['aguacate',40,'grasa'],['limon',15,'sazon']],
+    ['Mezcla el requesón con el jitomate y el pepino picados finos.',
+     'Sirve sobre las tostadas con aguacate y limón.'],
+    ['rapido','sin_cocinar','alto_proteina']),
+
+  r('omelette_claras','Omelette ligero de claras con verdura','🥚',['cena'],14,
+    [['clara_huevo',250,'prot'],['calabacita',100,'verd'],['champinon',80,'verd'],
+     ['espinaca',60,'verd'],['queso_panela',40,'prot'],['aceite_oliva',4,'grasa'],
+     ['tortilla_maiz',60,'carbo']],
+    ['Saltea las verduras con el aceite hasta que suelten el agua.',
+     'Vierte las claras, deja cuajar y agrega el panela.',
+     'Dobla el omelette y sirve caliente con tortillas.'],
+    ['bajo_grasa','bajo_carbo','alto_proteina']),
+
+  r('pollo_ensalada','Pollo a la plancha con ensalada verde','🥬',['cena'],18,
+    [['pollo_pechuga_crudo',180,'prot'],['lechuga',80,'verd'],['pepino',100,'verd'],
+     ['jitomate',80,'verd'],['aguacate',50,'grasa'],['limon',20,'sazon'],
+     ['aceite_oliva',5,'grasa'],['arroz_cocido',120,'carbo']],
+    ['Sazona el pollo y ásalo 5 minutos por lado.',
+     'Mezcla la ensalada y aliña con limón y aceite.',
+     'Sirve el pollo rebanado encima con el aguacate y el arroz aparte.'],
+    ['rapido','bajo_carbo']),
+
+  r('caldo_camaron','Caldo de camarón con verduras','🍤',['cena'],28,
+    [['camaron_crudo',180,'prot'],['jitomate',120,'verd'],['zanahoria',80,'verd'],
+     ['calabacita',100,'verd'],['chile_guajillo',6,'sazon'],['ajo',5,'sazon'],
+     ['cebolla',40,'verd'],['arroz_cocido',100,'carbo']],
+    ['Hidrata el guajillo y licúalo con jitomate, ajo y cebolla.',
+     'Hierve esa salsa colada con agua y agrega las verduras en cubos.',
+     'Al final añade los camarones; 4 minutos y listo.',
+     'Sirve con el arroz.'],
+    ['ligero','reconfortante']),
+
+  r('tostadas_pollo','Tostadas de pollo','🫓',['cena'],15,
+    [['tostada',36,'carbo'],['pollo_pechuga_cocido',150,'prot'],['frijol_refrito',100,'carbo'],
+     ['lechuga',60,'verd'],['jitomate',60,'verd'],['crema_acida',20,'grasa'],
+     ['queso_fresco',30,'prot']],
+    ['Unta las tostadas con los frijoles calientes.',
+     'Cubre con el pollo deshebrado, la lechuga y el jitomate.',
+     'Termina con crema y queso.'],
+    ['rapido','clasico']),
+
+  /* ==================== COLACIONES ==================== */
+  r('col_yogur_fresa','Yogur griego con fresas','🍓',['colacion'],3,
+    [['yogur_griego_0',200,'prot'],['fresa',120,'carbo'],['chia',8,'grasa']],
+    ['Mezcla todo en un vaso y listo.'],
+    ['rapido','sin_cocinar']),
+
+  r('col_jicama','Jícama y pepino con requesón','🥒',['colacion'],5,
+    [['jicama',150,'carbo'],['pepino',120,'verd'],['requeson',100,'prot'],
+     ['limon',20,'sazon']],
+    ['Corta la jícama y el pepino en bastones y báñalos con limón.',
+     'Acompaña con el requesón espolvoreado con un poco de chile en polvo.'],
+    ['rapido','muy_ligero']),
+
+  r('col_manzana_crema','Manzana con crema de cacahuate','🍎',['colacion'],3,
+    [['manzana',180,'carbo'],['crema_cacahuate',20,'grasa']],
+    ['Rebana la manzana y úntale la crema de cacahuate.'],
+    ['rapido','sin_cocinar']),
+
+  r('col_licuado','Licuado rápido de proteína','🥤',['colacion'],3,
+    [['whey',30,'prot'],['leche_light',250,'prot'],['platano',80,'carbo'],
+     ['avena',20,'carbo']],
+    ['Licúa todo con hielo 30 segundos.'],
+    ['rapido','post_entreno']),
+
+  r('col_salmas_panela','Salmas con panela y jitomate','🍘',['colacion'],4,
+    [['salmas',24,'carbo'],['queso_panela',60,'prot'],['jitomate',60,'verd']],
+    ['Arma las galletas con una rebanada de panela y jitomate encima.'],
+    ['rapido','sin_cocinar']),
+
+  r('col_almendra_fruta','Almendras con mandarina','🌰',['colacion'],2,
+    [['almendra',25,'grasa'],['mandarina',180,'carbo']],
+    ['Un puño de almendras y la fruta. Nada más.'],
+    ['rapido','portatil']),
+
+  r('col_huevo_cocido','Huevos cocidos con jícama','🥚',['colacion'],10,
+    [['huevo_entero',100,'prot'],['jicama',120,'carbo'],['limon',15,'sazon']],
+    ['Cuece los huevos 9 minutos y enfríalos.',
+     'Acompáñalos con la jícama en bastones y limón.'],
+    ['portatil','alto_proteina']),
+
+  r('col_requeson_amaranto','Requesón con amaranto y miel','🌾',['colacion'],3,
+    [['requeson',150,'prot'],['amaranto',30,'carbo'],['miel',10,'sazon']],
+    ['Mezcla el requesón con el amaranto y endulza con la miel.'],
+    ['rapido','sin_cocinar'])
+  ];
 })();
 
 
@@ -1385,10 +1788,89 @@ NT.model = (function () {
     return top;
   }
 
+
+  /* ---------------- mejores alimentos para lo que falta ----------------
+     Compara el "perfil energético" de lo que te falta (qué parte de las
+     calorías restantes deberían venir de proteína, carbohidrato y grasa)
+     contra el perfil de cada alimento. El que más se parece, gana. */
+  function bestFoodsFor(rest, foods, opts) {
+    opts = opts || {};
+    const need = {
+      kcal: Math.max(0, rest.kcal), protein: Math.max(0, rest.protein),
+      carbs: Math.max(0, rest.carbs), fat: Math.max(0, rest.fat)
+    };
+    if (need.kcal < 30 && need.protein < 5) return [];
+
+    const base = Math.max(1, need.protein * 4 + need.carbs * 4 + need.fat * 9);
+    const want = { p: need.protein * 4 / base, c: need.carbs * 4 / base, f: need.fat * 9 / base };
+
+    function capFor(f) {
+      if (f.cat === 'verdura') return 300;
+      if (f.cat === 'fruta') return 250;
+      if (f.kcal >= 500) return 40;
+      if (f.kcal >= 350) return 80;
+      if (f.kcal >= 200) return 130;
+      if (f.kcal >= 110) return 250;
+      return 320;
+    }
+
+    const NO_SIRVEN = ['cilantro','ajo','chile_serrano','chile_guajillo','chipotle_adobo',
+                       'limon','salsa_roja','salsa_verde','apio','lechuga','pepino','cafe'];
+    const minKcal = Math.max(55, need.kcal * 0.08);
+
+    const rows = foods.filter(function (f) {
+      if (f.archived || f.kcal <= 5) return false;
+      // fuera condimentos, hierbas, dulces, refrescos y suplementos
+      if (['otro','suplemento','bebida'].indexOf(f.cat) >= 0) return false;
+      if (NO_SIRVEN.indexOf(f.id) >= 0) return false;
+      if ((opts.exclude || []).indexOf(f.id) >= 0) return false;
+      return true;
+    }).map(function (f) {
+      const kb = Math.max(1, f.protein * 4 + f.carbs * 4 + f.fat * 9);
+      const prof = { p: f.protein * 4 / kb, c: f.carbs * 4 / kb, f: f.fat * 9 / kb };
+      // distancia entre perfiles (0 = idéntico)
+      const dist = Math.abs(prof.p - want.p) * 1.6 + Math.abs(prof.c - want.c) +
+                   Math.abs(prof.f - want.f) * 1.4;
+
+      // cantidad sugerida: lo que se agote primero
+      let g = capFor(f);
+      if (f.protein > 0 && need.protein > 0) g = Math.min(g, need.protein / f.protein * 100);
+      if (f.kcal > 0) g = Math.min(g, need.kcal * 0.75 / f.kcal * 100);
+      if (f.fat > 1.5 && need.fat > 0) g = Math.min(g, need.fat / f.fat * 100);
+      g = Math.max(15, g >= 100 ? Math.round(g / 10) * 10 : Math.round(g / 5) * 5);
+
+      const k = g / 100;
+      const n = { kcal:f.kcal*k, protein:f.protein*k, carbs:f.carbs*k, fat:f.fat*k,
+                  fiber: f.micros && f.micros.fiber !== null ? f.micros.fiber * k : null };
+      const cover = need.protein > 0 ? Math.min(1, n.protein / need.protein) : 0;
+      const score = dist - (f.favorite ? 0.28 : 0) - cover * 0.9 +
+                    (n.kcal > need.kcal ? 0.6 : 0) +
+                    (n.kcal < minKcal ? 2.5 : 0);   // una porción que casi no aporta, no sirve
+      return { food:f, grams:g, n:n, dist:dist, score:score, aporta:n.kcal >= minKcal };
+    }).filter(function (x) { return x.aporta; });
+
+    rows.sort(function (a, b) { return a.score - b.score; });
+    return rows.slice(0, opts.limit || 8);
+  }
+
+  /* ---------------- alimentos ricos en un micronutriente ---------------- */
+  function bestForMicro(microKey, foods, limit) {
+    return foods.filter(function (f) {
+      return !f.archived && f.micros && f.micros[microKey] !== null &&
+             f.micros[microKey] !== undefined && f.micros[microKey] > 0;
+    }).map(function (f) {
+      const por = (f.portions || []).filter(function (p) { return p.id !== 'g'; })[0];
+      const g = por ? por.grams : 100;
+      return { food:f, grams:g, amount: f.micros[microKey] * g / 100,
+               per100: f.micros[microKey], label: por ? por.label : '100 g' };
+    }).sort(function (a, b) { return b.amount - a.amount; }).slice(0, limit || 4);
+  }
+
   return { MICROS, CATS, ACTIVITY, GOALS, PACE, TRAIN_MET,
            defaultProfile, defaultMeals, defaultPrefs,
            computeTargets, portionOf, nutrientsFor, makeEntry,
-           emptyTotals, sumEntries, buildDay, planRemaining, suggest };
+           emptyTotals, sumEntries, buildDay, planRemaining, suggest,
+           bestFoodsFor, bestForMicro };
 })();
 
 
@@ -1498,7 +1980,52 @@ NT.planner = (function () {
   }
 
   /* ---------- construye una comida concreta para un objetivo ---------- */
-  function buildMeal(target, P, arche, rand, used) {
+  /* elige un platillo del recetario que quepa en el objetivo de la comida */
+  function pickRecipe(target, arche, rand, ctx) {
+    if (!ctx || !ctx.foodsById || !NT.recipes) return null;
+    const key = arche === 'fuerte' ? 'comida' : arche;
+    const universo = (ctx.recipePool && ctx.recipePool[key] && ctx.recipePool[key].length)
+      ? ctx.recipePool[key] : NT.recipes.forMeal(key);
+    let cands = universo.filter(function (r) {
+      if (ctx.usedRecipes && ctx.usedRecipes[r.id]) return false;
+      if (!NT.recipes.isAvailable(r, ctx.foodsById, ctx.prefs)) return false;
+      if (!NT.recipes.fitsTarget(r, target, ctx.foodsById)) return false;
+      if (key === 'colacion') {
+        const tieneProt = r.ingredients.some(function (i) { return i.role === 'prot'; });
+        if (!tieneProt) return false;
+      }
+      return true;
+    });
+    if (!cands.length && ctx.recipePool) {
+      // el menú de la semana no dio opciones: abre a todo el recetario
+      cands = NT.recipes.forMeal(key).filter(function (r) {
+        return NT.recipes.isAvailable(r, ctx.foodsById, ctx.prefs) &&
+               NT.recipes.fitsTarget(r, target, ctx.foodsById);
+      });
+    }
+    if (!cands.length) return null;
+    // evita las de días recientes, salvo que no quede nada
+    const frescas = cands.filter(function (r) { return !(ctx.avoidRecipes || {})[r.id]; });
+    if (frescas.length) cands = frescas;
+    const rec = cands[Math.floor(rand() * cands.length) % cands.length];
+    if (ctx.usedRecipes) ctx.usedRecipes[rec.id] = 1;
+    const scaled = NT.recipes.scale(rec, target, ctx.foodsById);
+    return {
+      items: scaled.items, sum: scaled.sum,
+      recipeId: rec.id, recipeName: rec.name, recipeEmoji: rec.emoji,
+      minutes: rec.minutes, steps: rec.steps, tags: rec.tags
+    };
+  }
+
+  function buildMeal(target, P, arche, rand, used, ctx) {
+    if (ctx && ctx.useRecipes !== false) {
+      const fromRecipe = pickRecipe(target, arche, rand, ctx);
+      if (fromRecipe) return fromRecipe;
+    }
+    return buildFromFoods(target, P, arche, rand, used);
+  }
+
+  function buildFromFoods(target, P, arche, rand, used) {
     const items = [];
     const sum = { kcal:0, protein:0, carbs:0, fat:0 };
     const A = ARCHETYPES[arche] || ARCHETYPES.fuerte;
@@ -1516,7 +2043,7 @@ NT.planner = (function () {
     function push(f, g, role) {
       if (!f || g <= 0) return;
       const n = nut(f, g);
-      items.push({ foodId:f.id, name:f.name, emoji:f.emoji, state:f.state, grams:g, n:n,
+      items.push({ foodId:f.id, name:f.name, emoji:f.emoji, state:f.state, grams:g, baseGrams:g, n:n,
                    role: role || f.cat, cap: capFor(f),
                    per100: { kcal:f.kcal, protein:f.protein, carbs:f.carbs, fat:f.fat } });
       addTo(sum, n);
@@ -1609,7 +2136,7 @@ NT.planner = (function () {
     if (!f || grams <= 0) return;
     const k = grams / 100;
     m.items.push({
-      foodId:f.id, name:f.name, emoji:f.emoji, state:f.state, grams:grams,
+      foodId:f.id, name:f.name, emoji:f.emoji, state:f.state, grams:grams, baseGrams:grams,
       n:{ kcal:f.kcal*k, protein:f.protein*k, carbs:f.carbs*k, fat:f.fat*k },
       role: role || f.cat, cap: capFor(f),
       per100:{ kcal:f.kcal, protein:f.protein, carbs:f.carbs, fat:f.fat }
@@ -1651,6 +2178,30 @@ NT.planner = (function () {
       });
       total = sumMeals(list);
     }
+    /* 3.5) si el día quedó muy bajo en grasa, súbela: primero escalando las
+       grasas que ya hay y, si no alcanza, agregando una a la comida principal */
+    if (budget.fat > 0 && total.fat < budget.fat * 0.85) {
+      const fatNow = roleSum(list, 'grasa', 'fat');
+      if (fatNow > 2) {
+        scaleRole(list, 'grasa', u.clamp((budget.fat - (total.fat - fatNow)) / fatNow, 1, 2.4));
+        total = sumMeals(list);
+      }
+      if (P && rand && total.fat < budget.fat * 0.85 && (P.grasa || []).length) {
+        const gap = budget.fat - total.fat;
+        const target2 = list.slice().sort(function (a, b) { return b.sum.kcal - a.sum.kcal; })[0];
+        if (target2) {
+          const usados = {};
+          target2.items.forEach(function (it) { usados[it.foodId] = 1; });
+          const opciones = P.grasa.filter(function (f) { return !usados[f.id]; });
+          const f = (opciones.length ? opciones : P.grasa)[Math.floor(rand() * (opciones.length || P.grasa.length))];
+          if (f && f.fat > 0) {
+            addItem(target2, f, roundG(u.clamp(gap / f.fat * 100, 5, capFor(f))), 'grasa');
+            total = sumMeals(list);
+          }
+        }
+      }
+    }
+
     /* 4) cierra la brecha de carbohidratos del día */
     for (let pass = 0; pass < 3; pass++) {
       const carbNow = roleSum(list, 'carbo', 'carbs');
@@ -1683,6 +2234,15 @@ NT.planner = (function () {
     const P = opts.pools || pools(foods, prefs || {});
     const rand = rng(seedOf(dateKey + '|' + (opts.variant || 0)));
     const used = {};
+    const foodsById = opts.foodsById || (function () {
+      const m = {}; foods.forEach(function (f) { m[f.id] = f; }); return m;
+    })();
+    const ctx = {
+      foodsById: foodsById, prefs: prefs || {},
+      avoidRecipes: opts.avoidRecipes || {}, usedRecipes: {},
+      recipePool: opts.recipePool || null,
+      useRecipes: opts.useRecipes !== false
+    };
     const active = meals.filter(function (m) { return m.enabled !== false; })
                         .sort(function (a, b) { return u.hhmmToMin(a.time) - u.hhmmToMin(b.time); });
     const totalShare = active.reduce(function (s, m) { return s + (m.share || 0); }, 0) || 1;
@@ -1695,9 +2255,12 @@ NT.planner = (function () {
         carbs: budget.carbs * w, fat: budget.fat * w
       };
       const arche = archetypeFor(m, i, active.length);
-      const built = buildMeal(target, P, arche, rand, used);
+      const built = buildMeal(target, P, arche, rand, used, ctx);
       return { mealId:m.id, mealName:m.name, time:m.time, emoji:m.emoji,
-               archetype:arche, target:target, items:built.items, sum:built.sum };
+               archetype:arche, target:target, items:built.items, sum:built.sum,
+               recipeId: built.recipeId || null, recipeName: built.recipeName || null,
+               recipeEmoji: built.recipeEmoji || null, minutes: built.minutes || null,
+               steps: built.steps || null };
     });
 
     const total = balancePlan(list, budget, P, rand);
@@ -1716,7 +2279,8 @@ NT.planner = (function () {
       carbs: Math.max(0, day.rest.carbs), fat: Math.max(0, day.rest.fat)
     };
     return buildDayPlan(day.dateKey, rest, pending, foods, prefs,
-                        { budget: rest, variant: opts.variant || 0 });
+                        { budget: rest, variant: opts.variant || 0,
+                          avoidRecipes: opts.avoidRecipes || {} });
   }
 
 
@@ -1743,17 +2307,64 @@ NT.planner = (function () {
     return out;
   }
 
+
+  /* ---------- menú de la semana ----------
+     Se eligen pocas recetas por tipo de comida y se rotan durante los 7 días.
+     Así los ingredientes se repiten y la lista de compras es realista. */
+  const RECIPE_TAKE = { desayuno:4, comida:5, cena:5, colacion:5 };
+
+  function recipeShortlist(foodsById, prefs, rand) {
+    const out = {};
+    ['desayuno','comida','cena','colacion'].forEach(function (k) {
+      const pool = NT.recipes.forMeal(k).filter(function (r) {
+        return NT.recipes.isAvailable(r, foodsById, prefs);
+      });
+      // los que usan favoritos van primero
+      pool.sort(function (a, b) { return favScore(b, foodsById) - favScore(a, foodsById); });
+      const cabeza = pool.slice(0, Math.min(pool.length, (RECIPE_TAKE[k] || 5) + 4));
+      const pick = [];
+      while (pick.length < (RECIPE_TAKE[k] || 5) && cabeza.length) {
+        const i = Math.floor(rand() * cabeza.length) % cabeza.length;
+        pick.push(cabeza.splice(i, 1)[0]);
+      }
+      out[k] = pick.length ? pick : pool;
+    });
+    return out;
+  }
+  function favScore(recipe, foodsById) {
+    return recipe.ingredients.reduce(function (s, i) {
+      const f = foodsById[i.foodId];
+      return s + (f && f.favorite ? 1 : 0);
+    }, 0);
+  }
+
   /* ---------- plan semanal ---------- */
   function buildWeekPlan(startKey, goals, meals, foods, prefs, opts) {
     opts = opts || {};
     const P = shortlist(pools(foods, prefs || {}), rng(seedOf(startKey + '|w' + (opts.variant || 0))));
+    const foodsById = {};
+    foods.forEach(function (f) { foodsById[f.id] = f; });
+    const menuRand = rng(seedOf(startKey + '|menu' + (opts.variant || 0)));
+    const recipePool = recipeShortlist(foodsById, prefs || {}, menuRand);
     const days = [];
+    const recent = [];
     for (let i = 0; i < 7; i++) {
       const k = u.addDays(startKey, i);
-      days.push(buildDayPlan(k, goals, meals, foods, prefs, { pools: P, variant: opts.variant || 0 }));
+      const avoid = {};
+      recent.slice(-2).forEach(function (set) {
+        Object.keys(set).forEach(function (id) { avoid[id] = 1; });
+      });
+      const day = buildDayPlan(k, goals, meals, foods, prefs,
+                               { pools: P, variant: opts.variant || 0,
+                                 foodsById: foodsById, avoidRecipes: avoid,
+                                 recipePool: recipePool });
+      const usados = {};
+      day.meals.forEach(function (m) { if (m.recipeId) usados[m.recipeId] = 1; });
+      recent.push(usados);
+      days.push(day);
     }
     return { id:'week_' + startKey, start:startKey, createdAt:Date.now(),
-             days:days, pantry: pantryOf(P) };
+             days:days, pantry: pantryOf(P), menu: recipePool };
   }
 
   function pantryOf(P) {
@@ -1763,6 +2374,10 @@ NT.planner = (function () {
     });
     return out;
   }
+
+  const CONDIMENTOS = ['ajo','cilantro','chile_serrano','chile_guajillo','chipotle_adobo','limon',
+                       'aceite_oliva','aceite_vegetal','salsa_roja','salsa_verde','miel','azucar',
+                       'mole_pasta','mantequilla','mayonesa'];
 
   function unitWord(label) {
     return String(label || 'pieza').split('(')[0].trim().split(/\s+/)[0] || 'pieza';
@@ -1791,7 +2406,8 @@ NT.planner = (function () {
       const grams = agg[id].grams;
       const r = { foodId:id, name: f ? f.name : id, emoji: f ? f.emoji : '🍽️',
                   state: f ? f.state : 'na',
-                  cat: f ? f.cat : 'otro', grams: grams, display:'', cost:null, bought:false };
+                  cat: CONDIMENTOS.indexOf(id) >= 0 ? 'condimento' : (f ? f.cat : 'otro'),
+                  grams: grams, display:'', cost:null, bought:false };
       if (f) {
         const piece = (f.portions || []).filter(function (p) {
           return p.id !== 'g' && p.grams !== 100 && /pieza|botella|lata|rebanada|filete|scoop|dosis|vaso/i.test(p.label);
@@ -1844,6 +2460,259 @@ NT.planner = (function () {
 
   return { buildDayPlan, replanRemaining, buildWeekPlan, shoppingFrom, mealPrepFrom,
            pools, shortlist, archetypeFor };
+})();
+
+
+/* ===== 24-recipes.js ===== */
+/* ============================================================
+   NUTRI TRACK — motor de recetas
+   Escala un platillo a los macros que te tocan y permite
+   cambiar un ingrediente por el que sí tengas en casa,
+   recalculando el resto del platillo.
+   ============================================================ */
+NT.recipes = (function () {
+  const u = NT.u;
+
+  const ROLE_MAP = { prot:'proteina', carbo:'carbo', verd:'verdura', grasa:'grasa', sazon:'sazon' };
+
+  function all() { return NT.RECIPES; }
+  function byId(id) { return NT.RECIPES.filter(function (r) { return r.id === id; })[0] || null; }
+  function forMeal(archetype) {
+    const key = archetype === 'fuerte' ? 'comida' : archetype;
+    return NT.RECIPES.filter(function (r) { return r.meals.indexOf(key) >= 0; });
+  }
+
+  /* ¿se puede cocinar con lo que hay en la biblioteca / sin lo excluido? */
+  function isAvailable(recipe, foodsById, prefs) {
+    const avoid = {};
+    ((prefs && prefs.avoid) || []).concat((prefs && prefs.dislikes) || [])
+      .forEach(function (id) { avoid[id] = 1; });
+    return recipe.ingredients.every(function (i) {
+      const f = foodsById[i.foodId];
+      return f && !f.archived && !avoid[i.foodId];
+    });
+  }
+
+  function per100(f) { return { kcal:f.kcal, protein:f.protein, carbs:f.carbs, fat:f.fat }; }
+  function nut(p, g) {
+    const k = g / 100;
+    return { kcal:p.kcal*k, protein:p.protein*k, carbs:p.carbs*k, fat:p.fat*k };
+  }
+  function zero() { return { kcal:0, protein:0, carbs:0, fat:0 }; }
+  function add(a, b) { a.kcal+=b.kcal; a.protein+=b.protein; a.carbs+=b.carbs; a.fat+=b.fat; return a; }
+  function sumItems(items) {
+    return items.reduce(function (s, it) { return add(s, it.n); }, zero());
+  }
+  function roundG(g, role) {
+    if (role === 'sazon') return Math.max(1, Math.round(g));
+    return g >= 100 ? Math.round(g / 10) * 10 : Math.max(5, Math.round(g / 5) * 5);
+  }
+  function capFor(f) {
+    if (f.cat === 'verdura') return 320;
+    if (f.cat === 'fruta') return 260;
+    if (f.kcal >= 500) return 45;
+    if (f.kcal >= 350) return 110;
+    if (f.kcal >= 200) return 160;
+    if (f.kcal >= 110) return 300;
+    return 380;
+  }
+
+  /* ---------- construye los items base de una receta ---------- */
+  function baseItems(recipe, foodsById) {
+    return recipe.ingredients.map(function (i) {
+      const f = foodsById[i.foodId];
+      if (!f) return null;
+      const p = per100(f);
+      return {
+        foodId: f.id, name: f.name, emoji: f.emoji, state: f.state,
+        grams: i.grams, baseGrams: i.grams,
+        role: ROLE_MAP[i.role] || 'sazon', recipeRole: i.role,
+        cap: capFor(f), per100: p, n: nut(p, i.grams)
+      };
+    }).filter(Boolean);
+  }
+
+  /* ---------- reescala una lista de items a un objetivo ---------- */
+  function rescaleItems(items, target) {
+    if (!items.length) return zero();
+
+    function byRole(role) { return items.filter(function (it) { return it.role === role; }); }
+    function sumOf(list, key) {
+      return list.reduce(function (s, it) { return s + it.n[key]; }, 0);
+    }
+    function recalc(it) { it.n = nut(it.per100, it.grams); }
+    function applyFactor(list, factor, lo, hi) {
+      const f = u.clamp(factor, lo, hi);
+      list.forEach(function (it) {
+        it.grams = roundG(u.clamp(it.baseGrams * f, 5, it.cap), it.role);
+        recalc(it);
+      });
+    }
+
+    const prot = byRole('proteina'), carbo = byRole('carbo'),
+          verd = byRole('verdura'), grasa = byRole('grasa'), sazon = byRole('sazon');
+
+    // 1) referencia de tamaño del platillo
+    items.forEach(function (it) { it.grams = it.baseGrams; recalc(it); });
+    const base = sumItems(items);
+    const sizeRatio = base.kcal > 0 ? target.kcal / base.kcal : 1;
+
+    // 2) verduras y grasas siguen el tamaño, pero con poco margen
+    applyFactor(verd, sizeRatio, 0.7, 1.5);
+    applyFactor(grasa, sizeRatio, 0.6, 1.35);
+
+    // 3) dos pasadas de proteína y carbohidrato (se afectan entre sí)
+    for (let pass = 0; pass < 2; pass++) {
+      const otherProt = sumOf(verd, 'protein') + sumOf(grasa, 'protein') +
+                        sumOf(sazon, 'protein') + sumOf(carbo, 'protein');
+      const baseProt = prot.reduce(function (s, it) { return s + it.per100.protein * it.baseGrams / 100; }, 0);
+      if (baseProt > 0) {
+        applyFactor(prot, (target.protein - otherProt) / baseProt, 0.35, 2.6);
+      }
+      const otherCarb = sumOf(prot, 'carbs') + sumOf(verd, 'carbs') +
+                        sumOf(grasa, 'carbs') + sumOf(sazon, 'carbs');
+      const baseCarb = carbo.reduce(function (s, it) { return s + it.per100.carbs * it.baseGrams / 100; }, 0);
+      if (baseCarb > 0) {
+        applyFactor(carbo, (target.carbs - otherCarb) / baseCarb, 0.25, 2.6);
+      }
+    }
+
+    // 4) control de grasa: primero recorta la grasa añadida, luego la fuente
+    //    de proteína si es la que se está pasando (mejor quedarse corto de
+    //    proteína que reventar el objetivo de grasa del día)
+    let total = sumItems(items);
+    if (target.fat > 0 && total.fat > target.fat * 1.20) {
+      const fatFromGrasa = sumOf(grasa, 'fat');
+      if (fatFromGrasa > 1) {
+        const need = total.fat - target.fat * 1.10;
+        const cf = (fatFromGrasa - need) / fatFromGrasa;
+        applyFactor(grasa, currentFactor(grasa) * u.clamp(cf, 0.25, 1), 0.2, 1.35);
+        total = sumItems(items);
+      }
+      // si el carbohidrato es graso (totopos, granola…) recórtalo antes que la proteína
+      const fatFromCarbo = sumOf(carbo, 'fat');
+      if (total.fat > target.fat * 1.20 && fatFromCarbo > total.fat * 0.22) {
+        const need15 = total.fat - target.fat * 1.10;
+        const cf2 = (fatFromCarbo - need15) / fatFromCarbo;
+        applyFactor(carbo, currentFactor(carbo) * u.clamp(cf2, 0.35, 1), 0.2, 3.0);
+        total = sumItems(items);
+      }
+      if (total.fat > target.fat * 1.20 && sumOf(prot, 'fat') > 3) {
+        const fatProt = sumOf(prot, 'fat');
+        const need2 = total.fat - target.fat * 1.15;
+        const pf = (fatProt - need2) / fatProt;
+        applyFactor(prot, currentFactor(prot) * u.clamp(pf, 0.55, 1), 0.3, 2.6);
+        total = sumItems(items);
+      }
+    }
+
+    // 5) ajuste fino por calorías, moviendo el carbohidrato
+    if (target.kcal > 0 && carbo.length) {
+      for (let i = 0; i < 2; i++) {
+        const carbKcal = sumOf(carbo, 'kcal');
+        if (carbKcal <= 0) break;
+        if (total.kcal > target.kcal * 1.08) {
+          const cut = total.kcal - target.kcal;
+          applyFactor(carbo, currentFactor(carbo) * u.clamp((carbKcal - cut) / carbKcal, 0.2, 1), 0.15, 3.0);
+        } else if (total.kcal < target.kcal * 0.92) {
+          const need = target.kcal - total.kcal;
+          applyFactor(carbo, currentFactor(carbo) * u.clamp((carbKcal + need) / carbKcal, 1, 2.2), 0.15, 3.0);
+        } else break;
+        total = sumItems(items);
+      }
+    }
+    return sumItems(items);
+  }
+
+  /* factor actual respecto a la receta base (para no perderlo al reajustar) */
+  function currentFactor(list) {
+    if (!list.length) return 1;
+    const a = list.reduce(function (s, it) { return s + it.grams; }, 0);
+    const b = list.reduce(function (s, it) { return s + it.baseGrams; }, 0);
+    return b > 0 ? a / b : 1;
+  }
+
+  /* ---------- escala una receta completa ---------- */
+  function scale(recipe, target, foodsById) {
+    const items = baseItems(recipe, foodsById);
+    const sum = rescaleItems(items, target);
+    return {
+      recipeId: recipe.id, recipeName: recipe.name, recipeEmoji: recipe.emoji,
+      minutes: recipe.minutes, steps: recipe.steps, tags: recipe.tags,
+      items: items, sum: sum
+    };
+  }
+
+  /* ---------- sustituir un ingrediente por lo que sí hay ---------- */
+  function swapIngredient(items, index, newFood, target) {
+    const old = items[index];
+    if (!old || !newFood) return null;
+    const p = per100(newFood);
+
+    // gramos de arranque: igualar el nutriente dominante del papel que cumplía
+    let g;
+    if (old.role === 'proteina') g = p.protein > 0 ? old.n.protein / p.protein * 100 : old.grams;
+    else if (old.role === 'carbo') g = p.carbs > 0 ? old.n.carbs / p.carbs * 100 : old.grams;
+    else if (old.role === 'grasa') g = p.fat > 0 ? old.n.fat / p.fat * 100 : old.grams;
+    else g = p.kcal > 0 ? old.n.kcal / p.kcal * 100 : old.grams;
+    g = roundG(u.clamp(g, 5, capFor(newFood)), old.role);
+
+    items[index] = {
+      foodId: newFood.id, name: newFood.name, emoji: newFood.emoji, state: newFood.state,
+      grams: g, baseGrams: g, role: old.role, recipeRole: old.recipeRole,
+      cap: capFor(newFood), per100: p, n: nut(p, g), swapped: true, swappedFrom: old.name
+    };
+    // el resto del platillo se reacomoda alrededor del cambio
+    const sum = rescaleItems(items, target);
+    return { items: items, sum: sum, from: old.name, to: newFood.name };
+  }
+
+  /* ---------- candidatos para sustituir ---------- */
+  function swapCandidates(item, foods, limit) {
+    const role = item.role;
+    const cands = foods.filter(function (f) {
+      if (f.archived || f.id === item.foodId || f.cat === 'suplemento') return false;
+      if (role === 'proteina') return f.protein >= 8;
+      if (role === 'carbo') return f.carbs >= 8;
+      if (role === 'verdura') return f.cat === 'verdura' || f.cat === 'fruta';
+      if (role === 'grasa') return f.fat >= 8;
+      return true;
+    }).map(function (f) {
+      const p = per100(f);
+      let g;
+      if (role === 'proteina') g = p.protein > 0 ? item.n.protein / p.protein * 100 : 100;
+      else if (role === 'carbo') g = p.carbs > 0 ? item.n.carbs / p.carbs * 100 : 100;
+      else if (role === 'grasa') g = p.fat > 0 ? item.n.fat / p.fat * 100 : 100;
+      else g = p.kcal > 0 ? item.n.kcal / p.kcal * 100 : 100;
+      g = roundG(u.clamp(g, 5, capFor(f)), role);
+      const n = nut(p, g);
+      const score = Math.abs(n.kcal - item.n.kcal) / 45 +
+                    Math.abs(n.protein - item.n.protein) / 7 +
+                    Math.abs(n.fat - item.n.fat) / 6 -
+                    (f.favorite ? 4 : 0) -
+                    (f.cat === (item.cat || '') ? 1 : 0);
+      return { food:f, grams:g, n:n, score:score };
+    });
+    cands.sort(function (a, b) { return a.score - b.score; });
+    return cands.slice(0, limit || 14);
+  }
+
+  /* ¿la receta encaja en el presupuesto de grasa de esa comida? */
+  function fitsTarget(recipe, target, foodsById) {
+    if (!target || !target.protein) return true;
+    let p = 0, fat = 0;
+    recipe.ingredients.forEach(function (i) {
+      const f = foodsById[i.foodId];
+      if (!f) return;
+      p += f.protein * i.grams / 100;
+      fat += f.fat * i.grams / 100;
+    });
+    if (p <= 0) return true;
+    return (fat / p) <= (target.fat / target.protein) * 1.8;
+  }
+
+  return { all, byId, forMeal, isAvailable, fitsTarget, scale, rescaleItems, swapIngredient,
+           swapCandidates, baseItems, sumItems, ROLE_MAP };
 })();
 
 
@@ -1941,12 +2810,27 @@ NT.state = (function () {
       return p;
     });
   }
+  function recentRecipes(days) {
+    const keys = [];
+    for (let i = 1; i <= (days || 3); i++) keys.push('day_' + u.addDays(S.dateKey, -i));
+    return Promise.all(keys.map(function (k) { return db.get('plans', k); }))
+      .then(function (rows) {
+        const avoid = {};
+        rows.filter(Boolean).forEach(function (p) {
+          (p.meals || []).forEach(function (m) { if (m.recipeId) avoid[m.recipeId] = 1; });
+        });
+        return avoid;
+      });
+  }
   function generatePlan(opts) {
     opts = opts || {};
-    const p = NT.planner.buildDayPlan(S.dateKey, S.goals, S.meals, S.foods, S.prefs,
-                                      { variant: opts.variant || 0 });
-    S.plan = p;
-    return db.put('plans', p).then(function () { emit(); return p; });
+    return recentRecipes(3).then(function (avoid) {
+      const p = NT.planner.buildDayPlan(S.dateKey, S.goals, S.meals, S.foods, S.prefs,
+                                        { variant: opts.variant || 0, avoidRecipes: avoid,
+                                          foodsById: S.foodsById });
+      S.plan = p;
+      return db.put('plans', p).then(function () { emit(); return p; });
+    });
   }
   function savePlan(p) {
     S.plan = p;
@@ -3323,22 +4207,35 @@ NT.measure = (function () {
 NT.viewToday = (function () {
   const u = NT.u, d = NT.dom, ui = NT.ui, st = NT.state, M = NT.model;
 
+  let tab = 'hoy';
+
   function render(root) {
-    const S = st.S, day = S.day, g = S.goals, t = day.totals;
+    const S = st.S, day = S.day, g = S.goals;
     const isToday = S.dateKey === u.todayKey();
 
     root.innerHTML =
       topbar(S, isToday) +
-      hero(day, g) +
-      yourDay(day, g) +
-      mealsCard(day) +
-      closeDay(day, g) +
-      microsCard(day, g) +
-      '<div class="tiny muted center mt24" style="padding:0 16px">' +
-        'Las cifras son estimaciones para organizar tu alimentación. ' +
-        'NUTRI TRACK no da diagnósticos ni sustituye a un médico o nutriólogo.' +
-      '</div>';
+      '<div class="tabs">' +
+        '<button data-ht="hoy" class="' + (tab === 'hoy' ? 'on' : '') + '">Mi día</button>' +
+        '<button data-ht="falta" class="' + (tab === 'falta' ? 'on' : '') + '">Me falta</button>' +
+      '</div>' +
+      '<div id="hoy-body"></div>';
 
+    const box = d.q('#hoy-body', root);
+    if (tab === 'falta') {
+      NT.viewFalta.render(box);
+    } else {
+      box.innerHTML =
+        hero(day, g) +
+        yourDay(day, g) +
+        mealsCard(day) +
+        closeDay(day, g) +
+        microsCard(day, g) +
+        '<div class="tiny muted center mt24" style="padding:0 16px">' +
+          'Las cifras son estimaciones para organizar tu alimentación. ' +
+          'NUTRI TRACK no da diagnósticos ni sustituye a un médico o nutriólogo.' +
+        '</div>';
+    }
     bind(root);
   }
 
@@ -3406,7 +4303,14 @@ NT.viewToday = (function () {
         next.meal.emoji + ' ' + u.esc(next.meal.name).toUpperCase() + ' · ' + u.pretty12(next.meal.time) + '</div>';
 
       if (planned && planned.items.length) {
-        html += '<div class="tiny muted">Te corresponde:</div>' +
+        html += (planned.recipeName
+            ? '<div style="display:flex;align-items:center;gap:8px;margin:8px 0 4px">' +
+              '<span style="font-size:20px">' + (planned.recipeEmoji || '🍽️') + '</span>' +
+              '<span style="font-weight:650;font-size:14.5px">' + u.esc(planned.recipeName) + '</span>' +
+              (planned.minutes ? '<span class="tiny muted">· ' + planned.minutes + ' min</span>' : '') +
+              '</div>'
+            : '') +
+          '<div class="tiny muted">Te corresponde:</div>' +
           '<div class="mt8" style="display:grid;gap:4px">' +
             planned.items.map(function (it) {
               return '<div style="font-size:14px;font-weight:600">' + (it.emoji || '•') + ' ' +
@@ -3425,8 +4329,9 @@ NT.viewToday = (function () {
             '<b>' + u.fmt(Math.max(0, day.rest.fat - planned.sum.fat)) + ' g</b> de grasa.</div>' +
           '<div class="btn-row mt12">' +
             '<button class="btn btn-primary btn-sm" data-logplan="' + next.meal.id + '">✓ Comí esto</button>' +
-            '<button class="btn btn-sm" data-logmeal="' + next.meal.id + '">Comí otra cosa</button>' +
-          '</div>';
+            '<button class="btn btn-sm" data-verreceta>Ver receta</button>' +
+          '</div>' +
+          '<button class="btn btn-sm btn-block mt8" data-logmeal="' + next.meal.id + '">Comí otra cosa</button>';
       } else {
         html += '<div class="tiny muted">Para ir bien en tu día, esta comida debería aportarte aproximadamente:</div>' +
           '<div class="kpi mt12">' +
@@ -3517,37 +4422,19 @@ NT.viewToday = (function () {
   /* ---------- cerrar el día ---------- */
   function closeDay(day, g) {
     const r = day.rest;
-    if (r.kcal <= 30 && r.protein <= 5) {
+    if (r.kcal <= 40 && r.protein <= 6) {
       return '<div class="sec"><div class="card"><div style="font-weight:650">🎉 Día cerrado</div>' +
         '<div class="tiny muted mt8">Ya alcanzaste tus objetivos de hoy. ' +
-        (r.kcal < -100 ? 'Te pasaste ' + u.fmt(-r.kcal) + ' kcal; mañana lo compensas con calma, sin recortes extremos.' : 'Buen trabajo.') +
+        (r.kcal < -100 ? 'Te pasaste ' + u.fmt(-r.kcal) + ' kcal; mañana lo retomas con calma, sin recortes extremos.' : 'Buen trabajo.') +
         '</div></div></div>';
     }
-    const sugs = M.suggest(r, st.S.foods, { limit: 3 });
-    let html = '<div class="sec"><div class="sec-head"><h2>Para cerrar tu día</h2></div><div class="card">';
-    html += '<div class="tiny muted" style="margin-bottom:10px">' +
-      'Te quedan aproximadamente <b>' + u.fmt(Math.max(0, r.protein)) + ' g de proteína</b>, ' +
-      '<b>' + u.fmt(Math.max(0, r.carbs)) + ' g de carbohidratos</b> y ' +
-      '<b>' + u.fmt(Math.max(0, r.fat)) + ' g de grasa</b>. Estas opciones salen de tu propia biblioteca:</div>';
-
-    if (!sugs.length) {
-      html += '<div class="note">Agrega más alimentos a tu biblioteca para que pueda proponerte combinaciones.</div>';
-    } else {
-      html += sugs.map(function (sg, i) {
-        return '<div class="sug">' +
-          '<div class="sug-t"><span>Opción ' + (i + 1) + '</span><span class="tiny muted">' + u.fmt(sg.sum.kcal) + ' kcal</span></div>' +
-          '<div class="sug-s">' + sg.items.map(function (it) {
-            return (it.food.emoji || '•') + ' ' + u.fmt(it.grams) + ' g de ' + u.esc(it.food.name.toLowerCase()) +
-              (it.food.state !== 'na' ? ' <span class="tag tag-' + (it.food.state === 'crudo' ? 'raw">crudo' : 'cook">cocido') + '</span>' : '');
-          }).join(' + ') + '</div>' +
-          '<div class="sug-m">' + ui.macroPills(sg.sum) + '</div>' +
-          '<div class="btn-row mt12"><button class="btn btn-sm" data-sug="' + i + '">Registrar esta opción</button></div>' +
-        '</div>';
-      }).join('');
-      window.__NT_SUGS = sugs;
-    }
-    html += '</div></div>';
-    return html;
+    return '<div class="sec"><div class="card">' +
+      '<div style="font-weight:700;font-size:15px">Para cerrar tu día</div>' +
+      '<div class="tiny muted mt8">Te quedan <b>' + u.fmt(Math.max(0, r.protein)) + ' g de proteína</b>, ' +
+      '<b>' + u.fmt(Math.max(0, r.carbs)) + ' g de carbohidratos</b>, ' +
+      '<b>' + u.fmt(Math.max(0, r.fat)) + ' g de grasa</b> y <b>' + u.fmt(Math.max(0, r.kcal)) + ' kcal</b>.</div>' +
+      '<button class="btn btn-primary btn-block mt16" data-verfalta>Ver qué me conviene comer</button>' +
+      '</div></div>';
   }
 
   /* ---------- micronutrientes ---------- */
@@ -3591,6 +4478,9 @@ NT.viewToday = (function () {
       NT.log.openLog({ mealId: el.dataset.logmeal, mealTitle: m ? m.name : '' });
     });
     d.on(root, 'click', '[data-ideas]', function (e, el) { openIdeas(el.dataset.ideas); });
+    d.on(root, 'click', '[data-ht]', function (e, el) { tab = el.dataset.ht; NT.app.rerender(); });
+    d.on(root, 'click', '[data-verfalta]', function () { tab = 'falta'; NT.app.rerender(); });
+    d.on(root, 'click', '[data-verreceta]', function () { NT.app.go('plan'); });
     d.on(root, 'click', '[data-genplan]', function () {
       st.generatePlan({ variant: 0 }).then(function () { d.toast('✨ Plan del día generado'); });
     });
@@ -3652,7 +4542,7 @@ NT.viewToday = (function () {
     });
   }
 
-  return { render };
+  return { render, setTab: function (t) { tab = t; } };
 })();
 
 
@@ -4297,7 +5187,19 @@ NT.viewPlan = (function () {
           '<h2>' + (m.emoji || '🍽️') + ' ' + u.esc(m.mealName) +
             ' <span class="tiny muted">· ' + u.pretty12(m.time) + '</span></h2>' +
           (done ? '<span class="badge badge-done">✓ Registrada</span>' : '') +
-          '</div><div class="card card-pad-0">' +
+          '</div>' +
+          (m.recipeName
+            ? '<div class="card" style="margin-bottom:10px;padding:12px 14px">' +
+                '<div style="display:flex;align-items:center;gap:10px">' +
+                  '<span style="font-size:22px">' + (m.recipeEmoji || '🍽️') + '</span>' +
+                  '<div style="flex:1;min-width:0">' +
+                    '<div style="font-weight:700;font-size:15px">' + u.esc(m.recipeName) + '</div>' +
+                    '<div class="tiny muted">' + (m.minutes ? m.minutes + ' min de preparación' : 'platillo del recetario') + '</div>' +
+                  '</div>' +
+                  '<button class="btn btn-sm" data-recipe="' + m.mealId + '">Ver receta</button>' +
+                '</div></div>'
+            : '') +
+          '<div class="card card-pad-0">' +
           (m.items.length
             ? m.items.map(function (it, i) {
                 return '<button class="row" data-item="' + m.mealId + '|' + i + '">' +
@@ -4343,9 +5245,11 @@ NT.viewPlan = (function () {
           '<span class="u">g' + (it.state !== 'na' ? ' ' + it.state : '') + '</span></div></div>' +
         '<div class="kpi" id="pi-macros">' + macros(it) + '</div>' +
         '<div class="btn-row mt16">' +
-          '<button class="btn btn-sm" data-swap>🔀 Cambiar alimento</button>' +
-          '<button class="btn btn-sm" data-remove>🗑️ Quitar del plan</button>' +
+          '<button class="btn btn-sm btn-primary" data-swap>🔁 No tengo esto</button>' +
+          '<button class="btn btn-sm" data-remove>🗑️ Quitar</button>' +
         '</div>' +
+        '<div class="tiny muted mt12">Si cambias este ingrediente, reajusto las cantidades del ' +
+        'resto del platillo para que los macros de la comida sigan cuadrando.</div>' +
         (food ? '<div class="tiny muted mt16">Fuente: ' + u.esc(food.src || '—') + '</div>' : ''),
       foot: '<div class="btn-row">' +
               '<button class="btn" data-lognow>Registrar solo esto</button>' +
@@ -4388,51 +5292,115 @@ NT.viewPlan = (function () {
     const plan = st.S.plan;
     const meal = plan.meals.filter(function (m) { return m.mealId === mealId; })[0];
     const it = meal.items[index];
-    const target = { kcal: it.n.kcal, protein: it.n.protein, carbs: it.n.carbs, fat: it.n.fat };
-
-    const cands = st.S.foods.filter(function (f) {
-      if (f.archived || f.id === it.foodId || f.cat === 'suplemento') return false;
-      if (it.role === 'proteina') return f.protein >= 9;
-      if (it.role === 'carbo') return f.carbs >= 10;
-      if (it.role === 'verdura') return f.cat === 'verdura';
-      if (it.role === 'grasa') return f.fat >= 10;
-      return true;
-    }).map(function (f) {
-      let g;
-      if (it.role === 'proteina') g = target.protein / Math.max(1, f.protein) * 100;
-      else if (it.role === 'carbo') g = target.carbs / Math.max(1, f.carbs) * 100;
-      else if (it.role === 'grasa') g = target.fat / Math.max(1, f.fat) * 100;
-      else g = target.kcal / Math.max(1, f.kcal) * 100;
-      g = Math.round(u.clamp(g, 10, 350) / 5) * 5;
-      const k = g / 100;
-      const n = { kcal:f.kcal*k, protein:f.protein*k, carbs:f.carbs*k, fat:f.fat*k };
-      const score = Math.abs(n.kcal - target.kcal) / 40 + Math.abs(n.protein - target.protein) / 6 +
-                    Math.abs(n.fat - target.fat) / 5 - (f.favorite ? 3 : 0);
-      return { f:f, g:g, n:n, score:score };
-    }).sort(function (a, b) { return a.score - b.score; }).slice(0, 12);
+    const cands = NT.recipes.swapCandidates(it, st.S.foods, 16);
 
     const s = ui.sheet({
-      title: 'Cambiar ' + it.name,
-      body: '<div class="note">Busco alternativas que aporten algo parecido. Tus favoritos van primero.</div>' +
-        '<div class="card card-pad-0 mt16">' + cands.map(function (c, i) {
-          return '<button class="row" data-alt="' + i + '">' +
-            '<span class="row-ico">' + (c.f.emoji || '🍽️') + '</span>' +
-            '<span class="row-main"><span class="row-t">' + u.esc(c.f.name) + (c.f.favorite ? ' ⭐' : '') + '</span>' +
-            '<span class="row-s">' + u.fmt(c.g) + ' g · ' + u.fmt(c.n.kcal) + ' kcal · P ' + u.fmt(c.n.protein, 1) + '</span></span>' +
-            '<span class="row-chev">›</span></button>';
-        }).join('') + '</div>'
+      title: 'En vez de ' + it.name,
+      body:
+        '<div class="note">Dime qué sí tienes y recalculo las cantidades de todo el platillo ' +
+        'para que la comida siga aportando lo mismo. Tus favoritos van primero.</div>' +
+        '<div class="searchbar mt16"><span class="si">🔍</span>' +
+          '<input class="input" id="sw-q" type="search" placeholder="Buscar otro alimento…"></div>' +
+        '<div class="card card-pad-0 mt12" id="sw-list"></div>'
     });
+
+    function draw(term) {
+      let list = cands;
+      if (term) {
+        const q = u.norm(term);
+        list = st.searchFoods(term).slice(0, 20).map(function (f) {
+          const c = NT.recipes.swapCandidates(it, [f], 1)[0];
+          return c || null;
+        }).filter(Boolean);
+      }
+      d.q('#sw-list', s.el).innerHTML = list.length
+        ? list.map(function (c, i) {
+            return '<button class="row" data-alt="' + c.food.id + '">' +
+              '<span class="row-ico">' + (c.food.emoji || '🍽️') + '</span>' +
+              '<span class="row-main"><span class="row-t">' + u.esc(c.food.name) +
+                (c.food.favorite ? ' ⭐' : '') + ' ' + ui.stateTag(c.food.state) + '</span>' +
+              '<span class="row-s">usaría ' + u.fmt(c.grams) + ' g · ' + u.fmt(c.n.kcal) +
+                ' kcal · P ' + u.fmt(c.n.protein, 1) + '</span></span>' +
+              '<span class="row-chev">›</span></button>';
+          }).join('')
+        : ui.empty('🔎', 'Sin opciones', 'Busca el alimento por su nombre.');
+    }
+    draw('');
+    d.on(s.el, 'input', '#sw-q', u.debounce(function (e, el) { draw(el.value); }, 180));
+
     d.on(s.el, 'click', '[data-alt]', function (e, el) {
-      const c = cands[u.num(el.dataset.alt)];
-      meal.items[index] = {
-        foodId:c.f.id, name:c.f.name, emoji:c.f.emoji, state:c.f.state, grams:c.g, n:c.n,
-        role: it.role, cap: 350, per100:{ kcal:c.f.kcal, protein:c.f.protein, carbs:c.f.carbs, fat:c.f.fat }
-      };
+      const food = st.S.foodsById[el.dataset.alt];
+      if (!food) return;
+      const res = NT.recipes.swapIngredient(meal.items, index, food, meal.target);
+      if (!res) { d.toast('No pude hacer el cambio'); return; }
+      meal.sum = res.sum;
+      meal.swapped = true;
       resum(plan);
       st.savePlan(plan).then(function () {
-        d.toast('Cambiado por ' + c.f.name);
         ui.closeAllSheets();
+        afterSwap(res.from, res.to);
       });
+    });
+  }
+
+  /* tras cambiar un ingrediente, ofrece reacomodar lo que queda del día */
+  function afterSwap(from, to) {
+    const s = ui.sheet({
+      title: 'Listo, cambié el platillo',
+      body:
+        '<div class="card"><div style="font-weight:650">' + u.esc(from) + ' → ' + u.esc(to) + '</div>' +
+        '<div class="tiny muted mt8">Reajusté las cantidades del platillo para que aporte ' +
+        'prácticamente lo mismo que antes.</div></div>' +
+        '<div class="note mt16">¿Quieres que además reacomode las comidas que te faltan hoy, ' +
+        'para compensar cualquier diferencia?</div>',
+      foot: '<div class="btn-row">' +
+              '<button class="btn" data-close>Así está bien</button>' +
+              '<button class="btn btn-primary" data-adjust>Sí, ajusta el resto</button></div>'
+    });
+    d.on(s.el, 'click', '[data-adjust]', function () {
+      st.replanRemaining().then(function (p) {
+        d.toast(p ? 'Ajusté lo que falta del día' : 'Ya no quedan comidas pendientes');
+        s.close();
+      });
+    });
+  }
+
+  /* ---------- ficha de la receta ---------- */
+  function recipeSheet(mealId) {
+    const meal = st.S.plan.meals.filter(function (m) { return m.mealId === mealId; })[0];
+    if (!meal || !meal.recipeName) return;
+    ui.sheet({
+      title: meal.recipeName,
+      body:
+        '<div class="card" style="display:flex;gap:12px;align-items:center">' +
+          '<span style="font-size:30px">' + (meal.recipeEmoji || '🍽️') + '</span>' +
+          '<div><div style="font-weight:700">' + u.esc(meal.recipeName) + '</div>' +
+          '<div class="tiny muted">' + (meal.minutes ? meal.minutes + ' min · ' : '') +
+            u.fmt(meal.sum.kcal) + ' kcal · P ' + u.fmt(meal.sum.protein) + ' g</div></div>' +
+        '</div>' +
+        '<div class="sec"><div class="sec-head"><h2>Ingredientes</h2></div>' +
+          '<div class="card card-pad-0">' +
+            meal.items.map(function (it) {
+              return '<div class="row"><span class="row-ico">' + (it.emoji || '🍽️') + '</span>' +
+                '<span class="row-main"><span class="row-t">' + u.esc(it.name) + ' ' +
+                  ui.stateTag(it.state) + (it.swapped ? ' <span class="tag">cambiado</span>' : '') + '</span>' +
+                '<span class="row-s">' + u.fmt(it.n.kcal) + ' kcal · P ' + u.fmt(it.n.protein, 1) + ' g</span></span>' +
+                '<span class="row-end"><b>' + u.fmt(it.grams) + ' g</b></span></div>';
+            }).join('') +
+          '</div></div>' +
+        (meal.steps && meal.steps.length
+          ? '<div class="sec"><div class="sec-head"><h2>Preparación</h2></div><div class="card">' +
+              meal.steps.map(function (t, i) {
+                return '<div style="display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)">' +
+                  '<span style="flex:0 0 22px;height:22px;border-radius:50%;background:var(--brand-soft);' +
+                  'color:var(--brand-dark);font-size:12px;font-weight:700;display:grid;place-items:center">' +
+                  (i + 1) + '</span><span style="font-size:13.5px;line-height:1.5">' + u.esc(t) + '</span></div>';
+              }).join('') +
+            '</div></div>'
+          : '') +
+        '<div class="note mt16">Las cantidades ya están ajustadas a lo que te toca en esta comida, ' +
+        'no son las de una receta genérica.</div>',
+      foot: '<button class="btn btn-primary btn-block" data-close>Cerrar</button>'
     });
   }
 
@@ -4478,6 +5446,7 @@ NT.viewPlan = (function () {
       const p = el.dataset.item.split('|');
       itemSheet(p[0], u.num(p[1]));
     });
+    d.on(root, 'click', '[data-recipe]', function (e, el) { recipeSheet(el.dataset.recipe); });
     d.on(root, 'click', '[data-editmealplan]', function (e, el) {
       const m = st.S.meals.filter(function (x) { return x.id === el.dataset.editmealplan; })[0];
       NT.log.openLog({ mealId: el.dataset.editmealplan, mealTitle: m ? m.name : '' });
@@ -5062,8 +6031,12 @@ NT.viewShop = (function () {
           (shop.rows.length ? (done / shop.rows.length * 100).toFixed(0) : 0) + '%;background:var(--brand)"></div></div>' +
       '</div>' +
 
-      Object.keys(byCat).map(function (cat) {
-        const c = M.CATS[cat] || { n:'Otros', e:'🍽️' };
+      Object.keys(byCat).sort(function (a, b) {
+        return (a === 'condimento' ? 1 : 0) - (b === 'condimento' ? 1 : 0);
+      }).map(function (cat) {
+        const c = cat === 'condimento'
+          ? { n:'Condimentos y básicos', e:'🧂' }
+          : (M.CATS[cat] || { n:'Otros', e:'🍽️' });
         return '<div class="sec"><div class="sec-head"><h2>' + c.e + ' ' + c.n + '</h2></div>' +
           '<div class="card card-pad-0">' +
             byCat[cat].map(function (r) {
@@ -5233,6 +6206,284 @@ NT.viewShop = (function () {
       const f = st.S.foodsById[el.dataset.price];
       if (f) NT.foodEdit.open(f);
     });
+  }
+
+  return { render };
+})();
+
+
+/* ===== 68-view-falta.js ===== */
+/* ============================================================
+   NUTRI TRACK — pantalla "Me falta por cubrir"
+   Qué te queda pendiente del día y con qué conviene cerrarlo.
+   ============================================================ */
+NT.viewFalta = (function () {
+  const u = NT.u, d = NT.dom, ui = NT.ui, st = NT.state, M = NT.model;
+
+  function render(root) {
+    const S = st.S, day = S.day, g = S.goals, t = day.totals, r = day.rest;
+
+    root.innerHTML =
+      resumen(day, g, r) +
+      avisos(day, g, r) +
+      alimentos(r) +
+      platillos(r) +
+      micros(day, g) +
+      '<div class="tiny muted center mt24" style="padding:0 16px">' +
+        'Las cantidades son sugerencias calculadas con tus objetivos y tu biblioteca. ' +
+        'Ajusta lo que no te acomode.</div>';
+    bind(root);
+  }
+
+  /* ---------------- lo que falta ---------------- */
+  function resumen(day, g, r) {
+    const filas = [
+      { n:'Calorías',      v:r.kcal,    u:'kcal', c:'var(--kcal)',  goal:g.kcal,    got:day.totals.kcal },
+      { n:'Proteína',      v:r.protein, u:'g',    c:'var(--prot)',  goal:g.protein, got:day.totals.protein },
+      { n:'Carbohidratos', v:r.carbs,   u:'g',    c:'var(--carb)',  goal:g.carbs,   got:day.totals.carbs },
+      { n:'Grasas',        v:r.fat,     u:'g',    c:'var(--fat)',   goal:g.fat,     got:day.totals.fat },
+      { n:'Fibra',         v:r.fiber,   u:'g',    c:'var(--fiber)', goal:g.fiber,   got:day.totals.micros.fiber.v },
+      { n:'Agua',          v:r.water/1000, u:'L', c:'var(--water)', goal:g.water/1000, got:day.water/1000, dec:true }
+    ];
+    const cerrado = r.kcal <= 40 && r.protein <= 6;
+
+    return '<div class="card">' +
+      '<div class="sec-head" style="margin-bottom:4px"><h2>' +
+        (cerrado ? '🎉 Ya cerraste tu día' : 'Te falta por cubrir') + '</h2></div>' +
+      '<div class="tiny muted" style="margin-bottom:14px">' +
+        (cerrado
+          ? 'Alcanzaste tus objetivos de hoy. Lo de abajo es solo referencia.'
+          : 'Esto es lo que queda entre lo que ya comiste y tu objetivo del día.') +
+      '</div>' +
+      '<div style="display:grid;gap:12px">' +
+        filas.map(function (f) {
+          const falta = f.v > 0;
+          const pct = f.goal > 0 ? u.clamp(f.got / f.goal * 100, 0, 100) : 0;
+          return '<div>' +
+            '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">' +
+              '<span style="font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px">' +
+                '<span class="dot" style="background:' + f.c + '"></span>' + f.n + '</span>' +
+              '<span style="font-size:15px;font-weight:700;font-variant-numeric:tabular-nums;color:' +
+                (falta ? f.c : 'var(--txt-3)') + '">' +
+                (falta ? 'faltan ' + u.fmt(f.v, f.dec ? 1 : 0) + ' ' + f.u
+                       : '✓ cubierto' + (f.v < -0.5 ? ' (+' + u.fmt(-f.v, f.dec ? 1 : 0) + ')' : '')) +
+              '</span>' +
+            '</div>' +
+            '<div class="track"><div class="fill" style="width:' + pct.toFixed(0) + '%;background:' + f.c + '"></div></div>' +
+          '</div>';
+        }).join('') +
+      '</div>' +
+      '<div class="btn-row mt16">' +
+        '<button class="btn btn-sm" data-water>💧 Agua</button>' +
+        '<button class="btn btn-sm" data-log>＋ Registrar</button>' +
+      '</div>' +
+    '</div>';
+  }
+
+  /* ---------------- avisos según cómo va el día ---------------- */
+  function avisos(day, g, r) {
+    const notas = [];
+    if (r.fat < 0 && r.protein > 10) {
+      notas.push(['warn', 'Ya alcanzaste tu objetivo de grasa y todavía te falta proteína. ' +
+        'Las opciones de abajo priorizan alimentos magros: claras, pescado blanco, pechuga, lácteos sin grasa.']);
+    }
+    if (r.kcal < 0) {
+      notas.push(['warn', 'Vas ' + u.fmt(-r.kcal) + ' kcal por encima de tu objetivo. ' +
+        'No pasa nada por un día: retoma mañana con normalidad, sin recortar de más ni saltarte comidas.']);
+    }
+    if (r.protein > g.protein * 0.55 && u.nowMinutes() > 17 * 60) {
+      notas.push(['warn', 'Te falta más de la mitad de tu proteína y ya es tarde. ' +
+        'Reparte lo que queda entre la cena y una colación para no meterte todo de golpe.']);
+    }
+    if (r.kcal > g.kcal * 0.6) {
+      notas.push(['', 'Todavía te falta la mayor parte del día. Los alimentos sueltos de abajo ' +
+        'sirven para completar huecos; para una comida entera, mira los platillos.']);
+    }
+    if (r.fiber > g.fiber * 0.7) {
+      notas.push(['', 'Vas bajo en fibra. Verduras, frijol, lenteja, avena y fruta con cáscara son lo que más aporta.']);
+    }
+    if (r.water > 800) {
+      notas.push(['', 'Te faltan ' + u.fmt(r.water / 1000, 1) + ' L de agua. Es lo más fácil de cerrar del día.']);
+    }
+    if (!notas.length) return '';
+    return '<div class="sec">' + notas.map(function (n) {
+      return '<div class="note ' + n[0] + ' mt12">' + n[1] + '</div>';
+    }).join('') + '</div>';
+  }
+
+  /* ---------------- mejores alimentos ---------------- */
+  function alimentos(r) {
+    const rows = M.bestFoodsFor(r, st.S.foods, { limit: 8 });
+    if (!rows.length) {
+      return '<div class="sec"><div class="sec-head"><h2>Qué te conviene comer</h2></div>' +
+        '<div class="card">' + ui.empty('✅', 'Nada pendiente',
+          'Ya cubriste lo importante del día.') + '</div></div>';
+    }
+    window.__NT_BEST = rows;
+    return '<div class="sec"><div class="sec-head"><h2>Los que mejor te cuadran</h2></div>' +
+      '<div class="tiny muted" style="margin:-4px 2px 10px">Ordenados por qué tan bien encajan con lo que te falta, ' +
+      'no por qué tan “sanos” son. Tus favoritos suben de lugar.</div>' +
+      '<div class="card card-pad-0">' +
+        rows.map(function (x, i) {
+          return '<div class="row">' +
+            '<span class="row-ico">' + (x.food.emoji || '🍽️') + '</span>' +
+            '<span class="row-main"><span class="row-t">' + u.esc(x.food.name) +
+              (x.food.favorite ? ' ⭐' : '') + ' ' + ui.stateTag(x.food.state) + '</span>' +
+            '<span class="row-s">' + u.fmt(x.grams) + ' g · ' + u.fmt(x.n.kcal) + ' kcal · P ' +
+              u.fmt(x.n.protein) + ' · C ' + u.fmt(x.n.carbs) + ' · G ' + u.fmt(x.n.fat) + '</span></span>' +
+            '<button class="btn btn-sm" data-addbest="' + i + '">+</button></div>';
+        }).join('') +
+      '</div></div>';
+  }
+
+  /* ---------------- platillos completos ---------------- */
+  function platillos(r) {
+    const need = { kcal: Math.max(0, r.kcal), protein: Math.max(0, r.protein),
+                   carbs: Math.max(0, r.carbs), fat: Math.max(0, r.fat) };
+    if (need.kcal < 220) return '';
+
+    const byId = st.S.foodsById;
+    const arche = u.nowMinutes() < 11 * 60 ? 'desayuno' : (u.nowMinutes() < 17 * 60 ? 'comida' : 'cena');
+    let cands = NT.recipes.forMeal(arche).concat(NT.recipes.forMeal('colacion'));
+    cands = cands.filter(function (rec) {
+      return NT.recipes.isAvailable(rec, byId, st.S.prefs) && NT.recipes.fitsTarget(rec, need, byId);
+    });
+    const scaled = cands.map(function (rec) {
+      const s = NT.recipes.scale(rec, need, byId);
+      const err = Math.abs(s.sum.kcal - need.kcal) / Math.max(1, need.kcal) +
+                  Math.abs(s.sum.protein - need.protein) / Math.max(1, need.protein) * 1.4 +
+                  (s.sum.fat > need.fat ? (s.sum.fat - need.fat) / Math.max(1, need.fat) : 0);
+      return { rec: rec, s: s, err: err };
+    }).sort(function (a, b) { return a.err - b.err; }).slice(0, 3);
+
+    if (!scaled.length) return '';
+    window.__NT_DISHES = scaled;
+
+    return '<div class="sec"><div class="sec-head"><h2>Platillos que te cierran el día</h2></div>' +
+      '<div class="tiny muted" style="margin:-4px 2px 10px">Recetas del recetario, ya ajustadas ' +
+      'a las cantidades que te faltan.</div>' +
+      scaled.map(function (x, i) {
+        return '<div class="card mt12">' +
+          '<div style="display:flex;align-items:center;gap:10px">' +
+            '<span style="font-size:24px">' + x.rec.emoji + '</span>' +
+            '<div style="flex:1;min-width:0">' +
+              '<div style="font-weight:700;font-size:15px">' + u.esc(x.rec.name) + '</div>' +
+              '<div class="tiny muted">' + x.rec.minutes + ' min · ' + u.fmt(x.s.sum.kcal) + ' kcal · P ' +
+                u.fmt(x.s.sum.protein) + ' g</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="tiny muted mt12" style="line-height:1.6">' +
+            x.s.items.map(function (it) { return u.fmt(it.grams) + ' g ' + u.esc(it.name.toLowerCase()); }).join(' · ') +
+          '</div>' +
+          '<div class="btn-row mt12">' +
+            '<button class="btn btn-sm" data-dish="' + i + '">Ver receta</button>' +
+            '<button class="btn btn-sm btn-primary" data-logdish="' + i + '">Registrar</button>' +
+          '</div>' +
+        '</div>';
+      }).join('') +
+    '</div>';
+  }
+
+  /* ---------------- micronutrientes bajos ---------------- */
+  function micros(day, g) {
+    const bajos = M.MICROS.filter(function (m) {
+      if (m.limit || m.k === 'fiber') return false;
+      const cell = day.totals.micros[m.k];
+      return m.rda && cell.v < m.rda * 0.6;
+    });
+    if (!bajos.length) {
+      return '<div class="sec"><div class="sec-head"><h2>Micronutrientes</h2></div>' +
+        '<div class="card"><div class="tiny muted">Vas bien en los micronutrientes que la app puede seguir hoy.</div></div></div>';
+    }
+    return '<div class="sec"><div class="sec-head"><h2>Micronutrientes bajos</h2></div>' +
+      '<div class="tiny muted" style="margin:-4px 2px 10px">Van por debajo del 60% de la referencia diaria. ' +
+      'Estos alimentos de tu biblioteca son los que más aportan de cada uno.</div>' +
+      bajos.slice(0, 5).map(function (m) {
+        const cell = day.totals.micros[m.k];
+        const tops = M.bestForMicro(m.k, st.S.foods, 3);
+        return '<div class="card mt12">' +
+          '<div style="display:flex;justify-content:space-between;align-items:baseline">' +
+            '<span style="font-weight:650">' + m.n + '</span>' +
+            '<span class="tiny muted">' + u.fmt(cell.v, cell.v < 10 ? 1 : 0) + ' / ' + u.fmt(m.rda) + ' ' + m.unit + '</span>' +
+          '</div>' +
+          '<div class="track mt8"><div class="fill" style="width:' +
+            u.clamp(cell.v / m.rda * 100, 0, 100).toFixed(0) + '%;background:var(--warn)"></div></div>' +
+          '<div class="mt12">' + tops.map(function (t) {
+            return '<div class="dl" style="padding:6px 0"><dt>' + (t.food.emoji || '') + ' ' + u.esc(t.food.name) +
+              ' <span class="tiny">(' + u.esc(t.label) + ')</span></dt>' +
+              '<dd>' + u.fmt(t.amount, t.amount < 10 ? 1 : 0) + ' ' + m.unit + '</dd></div>';
+          }).join('') + '</div>' +
+        '</div>';
+      }).join('') +
+      '<div class="tiny muted mt12">Referencias generales para adulto. No son una indicación clínica ' +
+      'ni sustituyen a un profesional.</div>' +
+    '</div>';
+  }
+
+  /* ---------------- eventos ---------------- */
+  function bind(root) {
+    d.on(root, 'click', '[data-water]', function () { NT.log.openWater(); });
+    d.on(root, 'click', '[data-log]', function () { NT.log.openLog({}); });
+    d.on(root, 'click', '[data-addbest]', function (e, el) {
+      const x = (window.__NT_BEST || [])[u.num(el.dataset.addbest)];
+      if (!x) return;
+      NT.log.quantitySheet(x.food, { mealId: NT.log.suggestMealId(), preGrams: x.grams });
+      setTimeout(function () {
+        const sel = document.querySelector('.scrim.show #q-portion');
+        const inp = document.querySelector('.scrim.show #q-qty');
+        if (sel) { sel.value = 'g'; sel.dispatchEvent(new Event('change', { bubbles:true })); }
+        if (inp) { inp.value = x.grams; inp.dispatchEvent(new Event('input', { bubbles:true })); }
+      }, 80);
+    });
+    d.on(root, 'click', '[data-dish]', function (e, el) {
+      const x = (window.__NT_DISHES || [])[u.num(el.dataset.dish)];
+      if (x) dishSheet(x);
+    });
+    d.on(root, 'click', '[data-logdish]', function (e, el) {
+      const x = (window.__NT_DISHES || [])[u.num(el.dataset.logdish)];
+      if (x) logDish(x);
+    });
+  }
+
+  function logDish(x) {
+    const mealId = NT.log.suggestMealId();
+    Promise.all(x.s.items.map(function (it) {
+      const f = st.S.foodsById[it.foodId];
+      return f ? st.logFood(f, it.grams, 'g', { mealId: mealId, source: 'sugerencia' }) : null;
+    }).filter(Boolean)).then(function () {
+      d.toast('✓ ' + x.rec.name + ' registrado');
+    });
+  }
+
+  function dishSheet(x) {
+    const s = ui.sheet({
+      title: x.rec.name,
+      body:
+        '<div class="card" style="display:flex;gap:12px;align-items:center">' +
+          '<span style="font-size:30px">' + x.rec.emoji + '</span>' +
+          '<div><div style="font-weight:700">' + u.esc(x.rec.name) + '</div>' +
+          '<div class="tiny muted">' + x.rec.minutes + ' min · ' + u.fmt(x.s.sum.kcal) + ' kcal · P ' +
+            u.fmt(x.s.sum.protein) + ' · C ' + u.fmt(x.s.sum.carbs) + ' · G ' + u.fmt(x.s.sum.fat) + '</div></div>' +
+        '</div>' +
+        '<div class="sec"><div class="sec-head"><h2>Ingredientes</h2></div><div class="card card-pad-0">' +
+          x.s.items.map(function (it) {
+            return '<div class="row"><span class="row-ico">' + (it.emoji || '🍽️') + '</span>' +
+              '<span class="row-main"><span class="row-t">' + u.esc(it.name) + ' ' + ui.stateTag(it.state) + '</span>' +
+              '<span class="row-s">' + u.fmt(it.n.kcal) + ' kcal · P ' + u.fmt(it.n.protein, 1) + '</span></span>' +
+              '<span class="row-end"><b>' + u.fmt(it.grams) + ' g</b></span></div>';
+          }).join('') +
+        '</div></div>' +
+        '<div class="sec"><div class="sec-head"><h2>Preparación</h2></div><div class="card">' +
+          x.rec.steps.map(function (t, i) {
+            return '<div style="display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)">' +
+              '<span style="flex:0 0 22px;height:22px;border-radius:50%;background:var(--brand-soft);' +
+              'color:var(--brand-dark);font-size:12px;font-weight:700;display:grid;place-items:center">' +
+              (i + 1) + '</span><span style="font-size:13.5px;line-height:1.5">' + u.esc(t) + '</span></div>';
+          }).join('') +
+        '</div></div>',
+      foot: '<button class="btn btn-primary btn-block" data-logit>Registrar este platillo</button>'
+    });
+    d.on(s.el, 'click', '[data-logit]', function () { logDish(x); s.close(); });
   }
 
   return { render };
